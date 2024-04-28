@@ -29,5 +29,11 @@ private:
 	G4LogicalVolume *logicWorld, *logicRadiator;
 	G4VPhysicalVolume *physWorld, *physRadiator, *physDetector;
 	G4GenericMessenger *fMessenger;
+	
+	G4Material *SiO2, *H2O, *Aerogel, *worldMat;
+	G4Element *C;
+	
+	
+	void DefineMaterials();
 };
 #endif
