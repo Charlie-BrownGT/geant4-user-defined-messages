@@ -21,19 +21,18 @@ public:
 	virtual G4VPhysicalVolume *Construct();
 	
 private:
-	G4LogicalVolume *logicDetector;
-	virtual void ConstructSDandField();
-	
-	G4int nCols, nRows;
 	G4Box *solidWorld, *solidRadiator, *solidDetector;
-	G4LogicalVolume *logicWorld, *logicRadiator;
+	G4LogicalVolume *logicWorld, *logicRadiator, *logicDetector;
 	G4VPhysicalVolume *physWorld, *physRadiator, *physDetector;
 	G4GenericMessenger *fMessenger;
 	
 	G4Material *SiO2, *H2O, *Aerogel, *worldMat;
 	G4Element *C;
 	
-	
+	virtual void ConstructSDandField();
 	void DefineMaterials();
+	
+	G4int nCols, nRows;
+	G4double xWorld, yWorld, zWorld;
 };
 #endif
